@@ -19,7 +19,7 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #bebebe;
+  --ifm-color-primary: #ffffff;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
   --ifm-color-primary-darkest: #1a8870;
@@ -28,3 +28,49 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+*{
+  box-sizing: border-box;
+}
+
+.card-body{
+  height: 200px;
+}
+
+.bg-black{
+  background: #000;
+}
+
+.card-text{
+  display: -webkit-box ; 
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp:2;
+  text-overflow: ellipsis;
+  
+}
+
+.float{
+  float: left;
+}
+
+.container {
+  max-width: 1296px;
+  margin: auto;
+}
+
+.tooltip {
+  background-color: #252525; /* 这里替换为您想要的背景颜色 */
+  color: #ffffff;
+  /* 其他样式属性 */
+}
+
+.btn-switch{
+  padding: 4px 8px 4px 8px ;
+  margin-right: 8px;
+}
+
+/* a{
+  text-decoration: none !important;
+  color: #000000 !important;
+} */
