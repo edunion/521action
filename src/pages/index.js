@@ -7,6 +7,7 @@ import logo_main from '../../static/img/logo-main.jpg'
 import logo_main_d from '../../static/img/logo-main-d.jpg'
 import { useColorMode } from '@docusaurus/theme-common';
 import { useRef , useEffect } from 'react';
+import cover from '../../static/img/cover1.jpg'
 
 
 import Heading from '@theme/Heading';
@@ -30,7 +31,7 @@ function HomepageHeader() {
 
     moveEls.current.forEach((el) => {
       if (el) {
-        el.style.transform = `translate(${calculateOffset(coordinateX)}px, ${calculateOffset(coordinateY)}px)`;
+        el.style.transform = `translate(${-calculateOffset(coordinateX)}px, ${-calculateOffset(coordinateY)}px)`;
       }
     });
   };
@@ -63,15 +64,16 @@ function HomepageHeader() {
               }}
               width='80%'
               src={colorMode === 'dark' ? logo_main_d : logo_main}
-              alt="民主倒退，公民搶救！ 圖片"
+              alt="國會濫權，立院集結！圖片"
             />
           </Link>
         </div>
         <h1 className="hero__title ">
-          民主倒退<br/>公民搶救</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+          國會濫權<br/>立院集結</h1>
+        {/* <p className="hero__subtitle">{siteConfig.tagline}</p> */}
+        <p className="hero__subtitle">5 月 24 日<br/>讓我們繼續到立法院集結，阻擋國會濫權法案三讀，讓我們繼續台灣公民的民主捍衛行動。</p>
         <div className={styles.buttons}>
-          <Link className="button button--secondary button--lg" to="/docs/category/521%E7%9B%B8%E9%97%9C%E4%BF%AE%E6%B3%95%E5%85%A7%E5%AE%B9%E7%B6%B2%E8%B7%AF%E8%B3%87%E6%96%99%E5%BD%99%E6%95%B4">
+          <Link className="button button--secondary button--lg" to="docs/category/524%E8%A1%8C%E5%8B%95%E7%9B%B8%E9%97%9C">
             行動整理
           </Link>
         </div>
@@ -81,16 +83,17 @@ function HomepageHeader() {
 }
 
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
+  //const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`${siteConfig.title}`}
+      title={'經濟民主連合行動'}
       description="民主倒退，公民搶救！
       下班下課立院集結，阻止國會濫權法案三讀">
       <HomepageHeader />
       <main>
-        {/* <Live/> */}
+        <Live/>
         <LinkGroup/>
+        <Section/>
       </main>
     </Layout>
   );
@@ -99,39 +102,61 @@ export default function Home() {
 function Live() {
   return(
   <div className='container'>
-    <h2 style={{textAlign:'center', fontSize:'32px' }} className='my-4' > 臉書直播 </h2>
-      <div style={{maxWidth:"800px" , margin:"auto" , display:"block"}}>
-       <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Feduniontaiwan%2Fvideos%2F367642095887070%2F&show_text=false&width=560&t=0"  style={{border:"none",overflow:"hidden", width:"100%" , aspectRatio:"16 / 9"}} scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe> 
+    <h2 className='text-center text-3xl my-8' > Youtube直播 </h2>
+      <div className=' max-w-[800px] m-auto block' >
+       <iframe src="https://www.youtube.com/embed/WeOvE1XJhsY?si=aQeLRgxd_XqaNhwK" autoplay="true" className=' border-0 overflow-hidden w-full aspect-video'  scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe> 
       </div>
-
   </div>
 )
 }
-
 function LinkGroup() {
 
-  return(<div className='py-5'>
+  return(<div className='py-5 mb-8'>
         <div>
         <div className={styles.buttons}>
-          <Link className="button button--secondary button--lg" to="https://fb.watch/sciZUgLahP/">
-            521現場直播（臉書）
+          <Link className="button button--secondary button--lg" to="https://www.facebook.com/100064556625684/videos/452804867298724">
+            現場直播（臉書）
           </Link>
         </div>
         </div>
         <div className='mt-4'>
         <div className={styles.buttons}>
           <Link className="button button--secondary button--lg" to="https://docs.google.com/spreadsheets/d/1z45k5TeuWS6dmYAR8q14Aaa6aBgPhG54KQBYdlGOwFo/edit#gid=1388832246">
-            521 審查進度文字更新
+            審查進度文字更新
           </Link>
         </div>          
         </div>
         <div className='mt-4'>
         <div className={styles.buttons}>
-          <Link className="button button--secondary button--lg" to="https://www.ly.gov.tw/Home/Index.aspx">
-            立院官方直播（23:47宣布散會）
+          <Link className="button button--secondary button--lg" to="https://ivod.ly.gov.tw/Live/Single/19">
+            立院官方直播
           </Link>
         </div>
         </div>
 
   </div>)
+}
+
+function Section (){
+  return(<div className=' bg-cover bg-bottom' style={{backgroundImage:`url(${cover})`}}>
+    <div className='container'>
+      <div className="flex flex-wrap justify-center items-center">
+      <div className=" w-full md:w-1/2">
+        <div className=' d-flex justify-content-center align-items-center'>
+        <h2 className=' text-white text-[32px] my-20 text-center drop-shadow-2xl'>捍衛民主，我們並肩前行<br/>志工徵集中！</h2>
+        </div>
+      </div>
+    <div className=" w-full md:w-1/2">
+      <div className=' d-flex justify-content-center align-items-center'>
+    <div style={{margin:'64px 0px 64px 0px'}} className={styles.buttons}>
+          <Link className="button button--secondary button--lg" to="https://docs.google.com/forms/d/e/1FAIpQLSfX3wca2K0I5LCqu3soKUe8bbn9E55h8D5ppzOSO-sAw2n3bg/viewform">
+            報名表單
+          </Link>
+        </div>
+      </div>
+    </div>
+      </div>
+    </div>
+  </div>)
+
 }

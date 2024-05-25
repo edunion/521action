@@ -1,7 +1,6 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "@theme/Layout";
 import axios from "axios";
-import "../../node_modules/bootstrap/dist/css/bootstrap-grid.css";
 import { useColorMode } from "@docusaurus/theme-common";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import Tabs from "@theme/Tabs";
@@ -19,7 +18,6 @@ export default function Media() {
 function MediaContext() {
   const [newsData, setData] = useState([]);
   const [speech, setSpeech] = useState([]);
-  const tipText = useRef([]);
   const { colorMode } = useColorMode();
   const getNews = async () => {
     try {
@@ -63,12 +61,12 @@ function MediaContext() {
                 {JSON.stringify(newsData) === "[]" ? (
                   <p>載入中...</p>
                 ) : (
-                  <div className="row gy-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                     {newsData.map((item, index) => {
                       return (
                         <BrowserOnly key={index}>
                           {() => (
-                            <Card item={item} index={index} com={tipText} />
+                            <Card item={item} index={index}  />
                           )}
                         </BrowserOnly>
                       );
@@ -81,12 +79,12 @@ function MediaContext() {
               {JSON.stringify(newsData) === "[]" ? (
                 <p>載入中...</p>
               ) : (
-                <div className="row gy-4">
+                <div>
                   {speech.map((item, index) => {
                     return (
                       <BrowserOnly key={index}>
                         {() => (
-                          <CardSpeech item={item} index={index} com={tipText} />
+                          <CardSpeech item={item} index={index}  />
                         )}
                       </BrowserOnly>
                     );
@@ -102,24 +100,18 @@ function MediaContext() {
 }
 
 function Card({ item, index, com }) {
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const { Tooltip } = require("bootstrap");
-      new Tooltip(com.current[index]);
-    }
-  }, [index, com]);
 
   return (
-    <div className="col-sm-6 col-md-4">
+    <div >
       <div
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title={item[1]}
         className="card"
-        ref={(el) => (com.current[index] = el)}
+        
       >
         <div className="card-body p-4">
-          <a className="text-black" target="_blank" href={item[3]}>
+          <a target="_blank" href={item[3]}>
             <h3 className="card-text mb-4">{item[1]}</h3>
           </a>
           <p className="mb-4">作者：{item[2]}</p>
@@ -132,10 +124,10 @@ function Card({ item, index, com }) {
 
 function CardSpeech({ item, index, com }) {
   return (
-    <div className="col-12">
-      <div className="card bg-gray">
-        <div style={{ height: "80px" }} className="card-body p-4">
-          <a className="text-black" target="_blank" href={item[3]}>
+    <div className="w-full card mb-3">
+      <div>
+        <div  className="h-[80px] p-4">
+          <a target="_blank" href={item[3]}>
             <h3 className="card-text mb-4">{item[1]}</h3>
           </a>
         </div>
