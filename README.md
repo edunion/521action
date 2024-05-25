@@ -1,41 +1,20 @@
-# Website
+# 國會濫權，立院集結 - 經民連議題網頁
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+## 使用說明
 
-### Installation
+[Docusaurus 官方文件](https://docusaurus.io/)
 
-```
-$ yarn
-```
+## 正式部署
 
-### Local Development
+[參考文件](https://docusaurus.io/docs/deployment)
 
 ```
-$ yarn start
+npm run deploy
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
+相關環境變數
 ```
-$ yarn build
+GIT_USER= << 上傳帳號 (edunion) >> 
+GIT_PASS= << 上傳者token >>
+CURRENT_BRANCH=main
 ```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
