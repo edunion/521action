@@ -6,18 +6,18 @@
 
 import {themes as prismThemes} from 'prism-react-renderer';
 import 'dotenv/config';
-
+const siteTitle = '國會濫權，立院集結！'
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: '民主倒退，公民搶救！',
+  title: siteTitle,
   tagline: '下班下課立院集結，阻止國會濫權法案三讀',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://edunion.github.io',
+  url: 'https://democracy.eduaction.tw/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/521action/',
+  baseUrl: '/',
   deploymentBranch:'gh-pages',
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -33,6 +33,14 @@ const config = {
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
+    // localeConfigs: {
+    //   en: {
+    //     label: 'English',
+    //   },
+    //   zh:{
+    //     label:'中文'
+    //   }
+    // },
   },
 
   presets: [
@@ -46,6 +54,7 @@ const config = {
         },
         docs: {
           sidebarPath: './sidebars.js',
+          
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
             //showLastUpdateAuthor: false,
@@ -107,11 +116,11 @@ const config = {
       image: 'img/docusaurus-social-card.jpg',
       metadata: [
         {name: 'keywords', content: '521 , 行動 , 經濟民主連合 , 經民連'},
-        {name: 'name', content: '民主倒退，公民搶救！'},
+        {name: 'name', content: siteTitle },
         {name: 'google-site-verification' , content: '4nQ-VE63O8JpuCWn1Ofgwj4oxUjTiot2n3xJxGQxH88'}
       ],
       navbar: {
-        title: '民主倒退，公民搶救！',
+        title: siteTitle ,
         logo: {
           alt: 'edunion Logo',
           src: 'img/nav-logo-n.svg',
@@ -122,7 +131,7 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: '521行動整理',
+            label: '行動資料',
           },
           //{to: '/blog', label: 'Blog', position: 'left'},
           {
@@ -130,6 +139,10 @@ const config = {
             label: '台灣經濟民主連合',
             position: 'right',
           },
+          // {
+          //   type: 'localeDropdown',
+          //   position: 'right',
+          // }
         ],
       },
       footer: {

@@ -2,15 +2,13 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import logo_main from '../../static/img/logo-main.jpg'
 import logo_main_d from '../../static/img/logo-main-d.jpg'
 import { useColorMode } from '@docusaurus/theme-common';
 import { useRef , useEffect } from 'react';
 import cover from '../../static/img/cover1.jpg'
+import ibon from '../../static/img/ibon.png'
 
-
-import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
 function HomepageHeader() {
@@ -51,9 +49,8 @@ function HomepageHeader() {
 
   return (
     <header ref={heroEl} className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <div style={{ marginBottom: '32px' }}>
-          <Link to="/docs/415">
+      <div className="container flex flex-wrap items-center">
+        <div className='w-full lg:w-1/2 px-6'>
             <img
               style={{ position: 'relative' }}
               ref={(el) => {
@@ -62,21 +59,24 @@ function HomepageHeader() {
                 }
                 imgRef.current = el;
               }}
-              width='80%'
               src={colorMode === 'dark' ? logo_main_d : logo_main}
               alt="國會濫權，立院集結！圖片"
             />
-          </Link>
         </div>
-        <h1 className="hero__title ">
+        <div className='w-full lg:w-1/2 text-center lg:text-left mb-8'>
+        <h1 className=" text-5xl hidden md:block">
+          國會濫權，立院集結！</h1>
+          <h1 className=" text-5xl block md:hidden">
           國會濫權<br/>立院集結</h1>
         {/* <p className="hero__subtitle">{siteConfig.tagline}</p> */}
-        <p className="hero__subtitle">5 月 24 日<br/>讓我們繼續到立法院集結，阻擋國會濫權法案三讀，讓我們繼續台灣公民的民主捍衛行動。</p>
-        <div className={styles.buttons}>
-          <Link className="button button--secondary button--lg" to="docs/category/524%E8%A1%8C%E5%8B%95%E7%9B%B8%E9%97%9C">
+        <p className="hero__subtitle">5 月 28 日<br/>讓我們繼續到立法院集結，阻擋國會濫權法案三讀，讓我們繼續台灣公民的民主捍衛行動。</p>
+        <div className='my-5'>
+          <Link className="text-black bg-yellow-300 p-4 rounded-md  hover:no-underline px-10" to="/docs/528file/%E6%8E%A1%E8%A8%AA%E9%80%9A%E7%9F%A5/statement-zh">
             行動整理
           </Link>
+        </div>          
         </div>
+
       </div>
     </header>
   );
@@ -93,7 +93,7 @@ export default function Home() {
       <main>
         <Live/>
         <LinkGroup/>
-        <Section/>
+        <Section2/>
       </main>
     </Layout>
   );
@@ -101,38 +101,33 @@ export default function Home() {
 
 function Live() {
   return(
-  <div className='container'>
+  <>
     <h2 className='text-center text-3xl my-8' > Youtube直播 </h2>
-      <div className=' max-w-[800px] m-auto block' >
+      <div className=' max-w-[800px] m-auto px-2' >
        <iframe src="https://www.youtube.com/embed/WeOvE1XJhsY?si=aQeLRgxd_XqaNhwK" autoplay="true" className=' border-0 overflow-hidden w-full aspect-video'  scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe> 
       </div>
-  </div>
+  </>
 )
 }
 function LinkGroup() {
 
-  return(<div className='py-5 mb-8'>
-        <div>
-        <div className={styles.buttons}>
-          <Link className="button button--secondary button--lg" to="https://www.facebook.com/100064556625684/videos/452804867298724">
-            現場直播（臉書）
-          </Link>
-        </div>
-        </div>
-        <div className='mt-4'>
-        <div className={styles.buttons}>
-          <Link className="button button--secondary button--lg" to="https://docs.google.com/spreadsheets/d/1z45k5TeuWS6dmYAR8q14Aaa6aBgPhG54KQBYdlGOwFo/edit#gid=1388832246">
+  return(<div className='max-w-[800px] m-auto py-5 px-2 mb-8 flex flex-col md:flex-row justify-between'>
+
+
+          <Link className="text-black text-center bg-slate-200 p-4 rounded-md my-5 hover:no-underline" to="https://www.facebook.com/100064556625684/videos/452804867298724">現場直播 (臉書)</Link>
+
+
+
+          <Link className="text-black text-center bg-slate-200 p-4 rounded-md my-5 hover:no-underline" to="https://docs.google.com/spreadsheets/d/1z45k5TeuWS6dmYAR8q14Aaa6aBgPhG54KQBYdlGOwFo/edit#gid=1388832246">
             審查進度文字更新
           </Link>
-        </div>          
-        </div>
-        <div className='mt-4'>
-        <div className={styles.buttons}>
-          <Link className="button button--secondary button--lg" to="https://ivod.ly.gov.tw/Live/Single/19">
+
+
+
+          <Link className="text-black text-center bg-slate-200 p-4 rounded-md my-5 hover:no-underline " to="https://ivod.ly.gov.tw/Live/Single/19">
             立院官方直播
           </Link>
-        </div>
-        </div>
+
 
   </div>)
 }
@@ -154,6 +149,22 @@ function Section (){
           </Link>
         </div>
       </div>
+    </div>
+      </div>
+    </div>
+  </div>)
+
+}
+
+function Section2 (){
+  return(<div className=' bg-cover bg-bottom' style={{backgroundImage:`url(${cover})`}}>
+    <div className='container'>
+      <div className="flex flex-wrap justify-center items-center py-10">
+      <div className=" w-full md:w-1/2">
+        <h2 className=' text-white text-[32px] md:text-[48px] text-center drop-shadow-2xl'>ibon 活動手舉牌列印</h2>
+      </div>
+    <div className=" w-full md:w-1/2 flex justify-center items-center">
+          <img src={ibon} className=' rounded-lg max-w-60 opacity-85' alt="民主倒退，公民搶救！活動手舉牌" />
     </div>
       </div>
     </div>

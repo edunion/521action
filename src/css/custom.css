@@ -1,4 +1,4 @@
-
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -41,9 +41,6 @@
   height: 200px;
 }
 
-.bg-black{
-  background: #000;
-}
 
 .card-text{
   display: -webkit-box ; 
@@ -54,27 +51,122 @@
   
 }
 
+.tooltip::after{
+  display: none;
+}
+
 .float{
   float: left;
 }
 
-.container {
+/* .container {
   max-width: 1296px;
   margin: auto;
-}
-
-.tooltip {
-  background-color: #252525;
-  color: #ffffff;
-
-}
+} */
 
 .btn-switch{
   padding: 4px 8px 4px 8px ;
   margin-right: 8px;
 }
 
-/* a{
-  text-decoration: none !important;
-  color: #000000 !important;
-} */
+
+.drawer {
+  position: relative;
+  display: grid;
+  grid-auto-columns: max-content auto;
+  width: 100%;
+}
+
+.drawer-content {
+  grid-column-start: 2;
+  grid-row-start: 1;
+  min-width: 0px;
+}
+
+.drawer-side {
+  pointer-events: none;
+  position: fixed;
+  inset-inline-start: 0px;
+  top: 0px;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(1, minmax(0px, 1fr));
+  grid-template-rows: repeat(1, minmax(0px, 1fr));
+  place-items: flex-start start;
+  overflow: hidden;
+  overscroll-behavior: contain;
+  height: 100dvh;
+}
+
+.drawer-side > .drawer-overlay {
+  position: sticky;
+  top: 0px;
+  place-self: stretch;
+  cursor: pointer;
+  background-color: transparent;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+.drawer-side > * {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.drawer-side > :not(.drawer-overlay) {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 300ms;
+  will-change: transform;
+  transform: translateX(-100%);
+}
+
+[dir="rtl"] .drawer-side > :not(.drawer-overlay) {
+  transform: translateX(100%);
+}
+
+.drawer-toggle {
+  position: fixed;
+  height: 0px;
+  width: 0px;
+  appearance: none;
+  opacity: 0;
+}
+
+.drawer-toggle:checked ~ .drawer-side {
+  pointer-events: auto;
+  visibility: visible;
+  overflow-y: auto;
+}
+
+.drawer-toggle:checked ~ .drawer-side > :not(.drawer-overlay) {
+  transform: translateX(0%);
+}
+
+.drawer-end {
+  grid-auto-columns: auto max-content;
+}
+
+.drawer-end .drawer-toggle ~ .drawer-content {
+  grid-column-start: 1;
+}
+
+.drawer-end .drawer-toggle ~ .drawer-side {
+  grid-column-start: 2;
+  justify-items: end;
+}
+
+.drawer-end .drawer-toggle ~ .drawer-side > :not(.drawer-overlay) {
+  transform: translateX(100%);
+}
+
+[dir="rtl"] .drawer-end .drawer-toggle ~ .drawer-side > :not(.drawer-overlay) {
+  transform: translateX(-100%);
+}
+
+.drawer-end .drawer-toggle:checked ~ .drawer-side > :not(.drawer-overlay) {
+  transform: translateX(0%);
+}
