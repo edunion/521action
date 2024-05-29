@@ -117,7 +117,8 @@ const config = {
       metadata: [
         {name: 'keywords', content: '521 , 行動 , 經濟民主連合 , 經民連'},
         {name: 'name', content: siteTitle },
-        {name: 'google-site-verification' , content: '4nQ-VE63O8JpuCWn1Ofgwj4oxUjTiot2n3xJxGQxH88'}
+        {name: 'google-site-verification' , content: '4nQ-VE63O8JpuCWn1Ofgwj4oxUjTiot2n3xJxGQxH88'},
+        {name: 'description ' , content: '近三次院會（17、21、24）立法院外集結超過十萬人的自主公民，抗議藍白二黨以違背程序正義的方式要通過國會濫權法案，這是台灣自主公民力量，挺身捍衛民主。立院以外，全台各地都有群眾集結，展現台灣人民對民主的堅持，以及願意守護這塊土地的行動力。 然而，國眾兩黨仍試圖力拼明日(28)完成三讀，台灣公民陣線，經濟民主連合與公投護台灣聯盟等超過五十個合辦團體持續邀請全台公民一同全程監督，用力喊出人民的怒吼，並集思廣益下一步行動方向。'}
       ],
       navbar: {
         title: siteTitle ,

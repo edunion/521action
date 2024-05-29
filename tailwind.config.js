@@ -7,10 +7,13 @@ module.exports = {
   theme: {
     extend: {}, 
   },
-  // plugins: [require('daisyui')],
-  // daisyui:{
-  //   prefix: "daisy-",
-  //   themes:false
-  // }
+  plugins: [require('daisyui')],
+  daisyui:{
+    prefix: "daisy-",
+    themes:false,
+    utils: true,
+    darkTheme: false,
+    base: false
+  }
 }
 

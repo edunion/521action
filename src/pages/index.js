@@ -2,13 +2,14 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import logo_main from '../../static/img/logo-main.jpg'
-import logo_main_d from '../../static/img/logo-main-d.jpg'
+import logo_main from '../../static/img/logo-main.png'
+import logo_main_d from '../../static/img/logo-main_d.png'
 import { useColorMode } from '@docusaurus/theme-common';
 import { useRef , useEffect } from 'react';
 import cover from '../../static/img/cover1.jpg'
+import coverDark from '../../static/img/cover3.jpg'
+import coverLight from '../../static/img/cover4.jpg'
 import ibon from '../../static/img/ibon.png'
-
 import styles from './index.module.css';
 
 function HomepageHeader() {
@@ -39,7 +40,11 @@ function HomepageHeader() {
     heroElement.addEventListener('mousemove', handleMouseMove);
 
     if (imgRef.current) {
-      imgRef.current.src = colorMode === 'dark' ? logo_main_d : logo_main;
+      imgRef.current.src = colorMode === 'dark' ? logo_main : logo_main;
+    }
+
+    if(heroEl.current){
+      heroEl.current.style.backgroundImage = `url(${colorMode === 'dark' ? coverDark : coverLight})`
     }
 
     return () => {
@@ -48,8 +53,9 @@ function HomepageHeader() {
   }, [ colorMode ]);
 
   return (
-    <header ref={heroEl} className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container flex flex-wrap items-center">
+    <header ref={heroEl} style={{backgroundImage:`url(${ colorMode === 'dark' ? coverDark : coverLight})`}} className=" bg-cover bg-bottom relative">
+      <div className=' absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-r from-neutral-900'></div>
+      <div className=" relative z-10 container flex flex-wrap items-center">
         <div className='w-full lg:w-1/2 px-6'>
             <img
               style={{ position: 'relative' }}
@@ -64,14 +70,14 @@ function HomepageHeader() {
             />
         </div>
         <div className='w-full lg:w-1/2 text-center lg:text-left mb-8'>
-        <h1 className=" text-5xl hidden md:block">
+        <h1 className=" text-5xl hidden md:block text-white">
           國會濫權，立院集結！</h1>
-          <h1 className=" text-5xl block md:hidden">
+          <h1 className=" text-5xl block md:hidden text-white">
           國會濫權<br/>立院集結</h1>
         {/* <p className="hero__subtitle">{siteConfig.tagline}</p> */}
-        <p className="hero__subtitle">5 月 28 日<br/>讓我們繼續到立法院集結，阻擋國會濫權法案三讀，讓我們繼續台灣公民的民主捍衛行動。</p>
-        <div className='my-5'>
-          <Link className="text-black bg-yellow-300 p-4 rounded-md  hover:no-underline px-10" to="/docs/528file/%E6%8E%A1%E8%A8%AA%E9%80%9A%E7%9F%A5/statement-zh">
+        <p className="hero__subtitle text-white">5 月 28 日<br/>讓我們繼續到立法院集結，阻擋國會濫權法案三讀，讓我們繼續台灣公民的民主捍衛行動。</p>
+        <div className='mt-2'>
+          <Link className="daisy-btn daisy-btn-warning hover:no-underline px-10" to="/docs/category/528行動相關">
             行動整理
           </Link>
         </div>          
@@ -102,32 +108,22 @@ export default function Home() {
 function Live() {
   return(
   <>
-    <h2 className='text-center text-3xl my-8' > Youtube直播 </h2>
+    <h2 className='text-center text-3xl my-8'  > Youtube直播 </h2>
       <div className=' max-w-[800px] m-auto px-2' >
-       <iframe src="https://www.youtube.com/embed/WeOvE1XJhsY?si=aQeLRgxd_XqaNhwK" autoplay="true" className=' border-0 overflow-hidden w-full aspect-video'  scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe> 
+       <iframe src="https://www.youtube.com/embed/1rpySS5gYTA?si=6C91augva3JZnF2I" autoplay="true" className=' border-0 overflow-hidden w-full aspect-video'  scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe> 
       </div>
   </>
 )
 }
 function LinkGroup() {
 
-  return(<div className='max-w-[800px] m-auto py-5 px-2 mb-8 flex flex-col md:flex-row justify-between'>
+  return(<div className='max-w-[800px] m-auto py-5 px-2 mb-8 grid grid-cols-2 gap-2'>
 
-
-          <Link className="text-black text-center bg-slate-200 p-4 rounded-md my-5 hover:no-underline" to="https://www.facebook.com/100064556625684/videos/452804867298724">現場直播 (臉書)</Link>
-
-
-
-          <Link className="text-black text-center bg-slate-200 p-4 rounded-md my-5 hover:no-underline" to="https://docs.google.com/spreadsheets/d/1z45k5TeuWS6dmYAR8q14Aaa6aBgPhG54KQBYdlGOwFo/edit#gid=1388832246">
-            審查進度文字更新
-          </Link>
-
-
-
-          <Link className="text-black text-center bg-slate-200 p-4 rounded-md my-5 hover:no-underline " to="https://ivod.ly.gov.tw/Live/Single/19">
+          <Link className=" daisy-btn daisy-btn-outline daisy-btn-neutral border-solid hover:no-underline flex items-center" to="https://www.facebook.com/100064556625684/videos/7308110975984561">現場直播 (臉書)</Link>
+          
+          <Link className=" daisy-btn daisy-btn-outline daisy-btn-neutral border-solid hover:no-underline flex items-center" to="https://ivod.ly.gov.tw/Live/Single/19/19054/live">
             立院官方直播
           </Link>
-
 
   </div>)
 }
