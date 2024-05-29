@@ -61,9 +61,9 @@ function MediaContext() {
         <div className="mb-4">
           <Tabs>
             <TabItem value="資料收集" label="資料收集">
-            <div className="drawer drawer-end">
-  <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-  <div className="drawer-content">
+            <div className="daisy-drawer daisy-drawer-end">
+  <input id="my-drawer" type="checkbox" className="daisy-drawer-toggle" />
+  <div className="daisy-drawer-content">
       <div>
                 {JSON.stringify(newsData) === "[]" ? (
                   <p>載入中...</p>
@@ -83,8 +83,8 @@ function MediaContext() {
               </div>
   </div> 
   {/* drawer */}
-  <div ref={drawer} className="drawer-side">
-    <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
+  <div ref={drawer} className="daisy-drawer-side">
+    <label htmlFor="my-drawer" aria-label="close sidebar" className="daisy-drawer-overlay"></label>
     <div  className={`${ colorMode === 'dark' ? 'bg-zinc-800' : ' bg-zinc-200' } menu px-4 pb-10 pt-[72px] w-80 md:w-96 min-h-full text-base-content overflow-auto`}>
         <Link to={drawerContent.url}>
           <h3>{drawerContent.title} <LinkSvg/> </h3>
