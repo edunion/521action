@@ -9,6 +9,16 @@
  */
 
 /* You can override the default Infima variables here. */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
 :root {
   --ifm-color-primary: #000000;
   --ifm-color-primary-dark: #29784c;
@@ -69,3 +79,8 @@
   margin-right: 8px;
 }
 
+
+.ep-tb:hover .ep-btn {
+  /* 在這裡添加想要的效果，例如改變背景顏色 */
+  display: flex;
+}
