@@ -10,7 +10,7 @@ import TabItem from "@theme/TabItem";
 
 export default function Media() {
   return (
-    <Layout wrapperClassName="pageWrapper">
+    <Layout title="相關討論貼文" description="下階段行動，轉向在地對話。公民力量將會再次集結，我們的目標是確保民主不被侵蝕，並持續監督政府和立法機關，以確保人民的權益不受侵犯。" wrapperClassName="pageWrapper">
       <MediaContext />
     </Layout>
   );
@@ -66,7 +66,9 @@ function MediaContext() {
   <div className="daisy-drawer-content">
       <div>
                 {JSON.stringify(newsData) === "[]" ? (
-                  <p>載入中...</p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                    <Skeleton/>
+                  </div>
                 ) : (
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                     {newsData.map((item, index) => {
@@ -160,4 +162,11 @@ function CardSpeech({ item, index, com }) {
 
 function LinkSvg(){
   return <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+}
+
+function Skeleton () {
+  return Array.from({ length: 6 }, (_, index) => (
+    <div className="card daisy-skeleton h-[200px]"></div>
+  ));
+
 }

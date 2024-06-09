@@ -1,6 +1,6 @@
 {
   "name": "edunion",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -16,12 +16,15 @@
   "dependencies": {
     "@docusaurus/core": "3.3.2",
     "@docusaurus/plugin-google-analytics": "^3.3.2",
+    "@docusaurus/plugin-content-docs": "~3.3.2",
     "@docusaurus/preset-classic": "3.3.2",
     "@docusaurus/theme-common": "^3.3.2",
+    "@gsap/react": "^2.1.1",
     "@mdx-js/react": "^3.0.0",
     "axios": "^1.7.0",
     "clsx": "^2.0.0",
     "dotenv": "^16.4.5",
+    "gsap": "^3.12.5",
     "prism-react-renderer": "^2.3.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
