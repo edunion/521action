@@ -16,8 +16,7 @@ import cover_t3 from '../../static/img/video-thumbnail3.webp'
 export default function Hp() {
   return (
     <>
-      <Layout description="這兩週以來，超過 20 萬人次輪班守護民主，全台至少 15 個縣市公民自發行動。我們要再次，深深地感謝願意了解議題、分享、轉發，以及走上街頭的每一個公民。
-我們知道，台灣的民主已經開始進入一段黑暗期。但每個民主人都是光，我們集結起來，就能夠和黑箱，和濫權戰鬥，守護台灣的民主憲政秩序！" title={'經濟民主連合行動'}>
+      <Layout title={'經濟民主連合行動'}>
         <Hero />
         <Statement />
         <Class/>
@@ -264,7 +263,7 @@ function Statement() {
             <div ref={moveObj} className=" w-[640px] -z-10 absolute opacity-20 font-black text-9xl top-20">反國會濫權</div>
       <div  className="container py-16">
         <div className=" grid grid-cols-12 gap-6">
-          <div className="col-span-12 lg:col-span-6 flex flex-col justify-center">
+          <div className="col-span-12 flex flex-col justify-center">
 
         <h2 className="font-black text-3xl md:text-6xl mb-8">
           反國會濫權
@@ -273,22 +272,7 @@ function Statement() {
           下階段行動，轉向在地對話。公民力量將會再次集結，我們的目標是確保民主不被侵蝕，並持續監督政府和立法機關，以確保人民的權益不受侵犯。
         </p>            
           </div>
-          <div className="col-span-12 lg:col-span-6">
 
-              <div className="daisy-card rounded-md shadow-xl daisy-image-full">
-  <div className="daisy-card-body">
-    <div className='w-full '>
-    <h2 className="daisy-card-title text-3xl">台灣公民陣線Ｘ新北工作隊 徵募志工</h2>
-    <p className=' leading-8'>青鳥起飛之後，我們還有很長路要走。<br/>
-如同週二立院外集結退場時的宣告，我們將與各團體一起走入地方，開啟草根對話。<br/>
-經過幾天的討論，未來的第一波行動將在6月從新北開展，希望邀請你一起加入板橋、中和、永和、新店、汐止、淡水等六個藍營選區的新北工作隊，支援未來一系列的戶外集會、室內座談，以及街頭宣講。</p>      
-    </div>
-    <div className="daisy-card-actions">
-      <a role="button" target="_blank" href='https://forms.gle/Vqs6hgrn6ktnWCsJ9' className="w-full text-black bg-white md:w-auto daisy-btn hover:bg-slate-200 hover:text-black hover:no-underline px-8">報名連結</a>
-    </div>
-  </div>
-</div>
-          </div>
 
         </div>
       </div>
