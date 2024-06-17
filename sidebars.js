@@ -84,7 +84,6 @@ const sidebars = {
         },
       ]
   },
-  'print',
   {
     type: 'link',
     label: '相關討論貼文', // The link label
