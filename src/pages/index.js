@@ -7,23 +7,26 @@ import { TextPlugin } from "gsap/TextPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
 import video from "../../static/img/video1.mp4";
-import { HomepageCard } from "../components/HomepageFeatures";
+import { HomepageCard , HomepageCard2, LinkGroup, Live } from "../components/HomepageFeatures";
 import videoCover from '../../static/img/video-cover2.webp'
 import logov2 from '../../static/img/logo-main-v2.webp'
 import cover_t1 from '../../static/img/video-thumbnail.webp'
 import cover_t2 from '../../static/img/video-thumbnail2.webp'
 import cover_t3 from '../../static/img/video-thumbnail3.webp'
+import time from '../../community/archive2/img/time.jpeg'
+import map from '../../community/archive2/img/map.jpeg'
 export default function Hp() {
   return (
     <>
       <Layout title={'經濟民主連合行動'}>
         <Hero />
         <Statement />
-        <Class/>
-        <Video />
         <div className="my-16">
         <HomepageCard/>
+        <HomepageCard2/>
         </div>
+        <Class/>
+        <Video />
       </Layout>
     </>
   );
@@ -272,12 +275,19 @@ function Statement() {
           下階段行動，轉向在地對話。公民力量將會再次集結，我們的目標是確保民主不被侵蝕，並持續監督政府和立法機關，以確保人民的權益不受侵犯。
         </p>            
           </div>
-
-
         </div>
       </div>
     </div>
   );
+}
+
+function Action2Info () {
+  return(
+    <div>
+      {/* <Live/> */}
+      <LinkGroup/>
+    </div>
+)
 }
 
 function Video() {
@@ -321,8 +331,8 @@ function Video() {
             <h2 className="text-black font-black text-3xl md:text-6xl mb-8 bg-white bg-opacity-60 inline-block">
               反對擴權，遍地開花
             </h2>
-            <p className="bg-white bg-opacity-60 text-black ">
-              這兩週以來，超過 20 萬人次輪班守護民主，全台至少 15
+            <p className="bg-white bg-opacity-60 text-black ps-2">
+              5 月 17 日至 28 日，超過 20 萬人次輪班守護民主，全台至少 15
               個縣市公民自發行動。我們要再次，深深地感謝願意了解議題、分享、轉發，以及走上街頭的每一個公民。
               <br />
               我們知道，台灣的民主已經開始進入一段黑暗期。但每個民主人都是光，我們集結起來，就能夠和黑箱，和濫權戰鬥，守護台灣的民主憲政秩序！
@@ -359,27 +369,9 @@ function Video() {
 
 function Section () {
 
-  const trigger = useRef();
-  gsap.registerPlugin(ScrollTrigger, useGSAP);
-  useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: trigger.current,
-        start: "top bottom-=200",
-        end: "center center ",
-        //markers: true,
-      },
-    });
-    tl.fromTo(
-      trigger.current,
-      { opacity: 0 },
-      {  opacity: 1, duration: 0.4 }
-    );
-  }, {});
-
   return(<div  className="py-10"  >
           <h2 className="text-center font-black text-3xl md:text-6xl mb-8"> 行動整理 </h2>
-    <div ref={trigger} className="container grid md:grid-cols-2 grid-cols-1 gap-4">
+    <div className="container grid md:grid-cols-2 grid-cols-1 gap-4">
       <Card cardTitle={'行動資料'} cardText={''} btnLink={''} btnText={'連結'}/>
       <Card cardTitle={'相關貼文討論'} cardText={''} btnLink={''} btnText={'連結'}/>
     </div>
