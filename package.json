@@ -15,8 +15,8 @@
   },
   "dependencies": {
     "@docusaurus/core": "3.3.2",
-    "@docusaurus/plugin-google-analytics": "^3.3.2",
     "@docusaurus/plugin-content-docs": "~3.3.2",
+    "@docusaurus/plugin-google-analytics": "^3.3.2",
     "@docusaurus/preset-classic": "3.3.2",
     "@docusaurus/theme-common": "^3.3.2",
     "@gsap/react": "^2.1.1",

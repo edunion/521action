@@ -86,7 +86,7 @@ export function HomepageCard2() {
 
   return (
     <div className='container mt-10'>
-    <div ref={heroEl}  style={{backgroundImage:`url(${ colorMode === 'dark' ? coverDark2: coverLight2})`}} className='  daisy-card bg-no-repeat overflow-hidden bg-cover bg-bottom shadow-xl rounded-md relative'>
+    <div ref={heroEl}  style={{backgroundImage:`url(${ colorMode === 'dark' ? coverDark2: coverLight2})`}} className='  daisy-card bg-no-repeat overflow-hidden bg-cover bg-center shadow-xl rounded-md relative'>
       {/* <div className='absolute z-20 top-0 text-center w-0 right-[96px]'><span className='py-4 px-3  inline-block  bg-accent font-semibold'>過去行動</span></div> */}
       <div className=' absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-r from-neutral-900'></div>
       <div className="md:flex-row-reverse relative z-10 container flex flex-wrap items-center">

@@ -156,11 +156,11 @@ function Hero() {
 
   return (<>
       <LoadingFullpage controller={loadingRef} />
-    <div className="h-[4000px]">
+    <div className="h-[4000px] overflow-hidden">
       {/* hero_bg_trigger */}
       <div
         ref={logoBgEl}
-        className="relative bg-cover overflow-hidden bg-no-repeat flex justify-center items-center"
+        className="relative w-full bg-cover overflow-hidden bg-no-repeat flex justify-center items-center"
         style={{ height: calcH(), backgroundImage: `url(${cover5})` }}
       >
         {/* logo2 layer */}
@@ -174,7 +174,7 @@ function Hero() {
             ref={textRef}
           ></div>          
         {/* logo2_demo */}
-          <img className="block mb-4" src={logov2} alt="" />
+          <img className="block mb-4" src={logov2} alt="台灣公民陣線串聯全國各地自主公民、在地公民團體舉辦相關活動，把握覆議後立法院重新議決前的有限時間，與藍營選區選民對話，向藍營立委施壓，希望改變藍營區域立委覆議時的投票傾向。" />
 
           {/* circle */}
           <div style={{backgroundColor:'#563f2e'}}
@@ -187,7 +187,7 @@ function Hero() {
           ref={logoEl}
           className="w-2/3 md:w-1/2"
           src={logo}
-          alt="藍委選區，在地對話！"
+          alt="反對國會擴權，反對立法院以違反程序正義的方式審理法案，發起「國會濫權，民主倒退，公民搶救，立院集結」行動"
         />
       <IconScroll/>
       </div>
@@ -463,7 +463,7 @@ function Class () {
     <div className="relative h-full aspect-video bg-cover bg-center flex items-end" style={{backgroundImage:`url(${videoCover})`}}>
       <div className="hidden md:block absolute bg-gradient-to-t from-zinc-800 top-1/2 bottom-0 left-0 right-0"></div>
       <div className="p-10 hidden md:block z-10">
-        <img className=' max-w-80 block drop-shadow-2xl' src={logov2} alt="標題" />
+        <img className=' max-w-80 block drop-shadow-2xl' src={logov2} alt="反國會濫權行動於5月28日結束第一階段立院集結行動時，宣布成立台灣公民陣線新北工作隊，將與經濟民主連合、公投護台灣聯盟及新北青年公共事務協會及本土小黨，共同投入第二階段「在地對話，前進新北」行動。" />
         <a role="button" target="_blank" href={ytBtnLink} className="hover:no-underline hover:bg-slate-200 hover:text-black bg-slate-50 text-black daisy-btn text-xl px-8 ">▶︎ Youtube 觀看</a>
       </div>
     </div>
