@@ -8,6 +8,7 @@ import coverLight2 from '../../../community/archive2/img/DSC00797.png'
 import coverDark2 from '../../../community/archive2/img/DSC00803.jpg'
 import logo2 from '../../../static/img/logo2.webp'
 
+
 export function HomepageCard() {
 
   const { colorMode } = useColorMode();
@@ -111,6 +112,7 @@ export function HomepageCard2() {
           <Link className=" daisy-btn bg-slate-50 text-black hover:bg-slate-200 hover:text-black hover:no-underline px-8" to="/community/archive2/post1">
             行動資料整理
           </Link>
+
         </div>          
         </div>
     </div>
@@ -144,3 +146,4 @@ export function LinkGroup() {
 
   </div>)
 }
+

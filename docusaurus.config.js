@@ -57,6 +57,7 @@ const config = {
           sidebarPath: './sidebars.js',
           routeBasePath:'docs',
           path:'docs',
+
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           showLastUpdateAuthor: false,
@@ -84,7 +85,7 @@ const config = {
         routeBasePath: 'community',
         sidebarPath: './sidebarsCommunity.js',
         showLastUpdateTime: true
-        
+
         // ... other options
       },
     ],
@@ -230,6 +231,7 @@ const config = {
          ],
         "datePublished": "2024-06-19T08:09:00+08:00",
         "dateModified": "2024-06-19T09:20:00+08:00",
+
         "author": [{
             "@type": "Person",
             "name": "台灣經濟民主連合",
@@ -254,6 +256,7 @@ const config = {
         "sameAs": ["https://edunion.github.io/521action/"],
         "logo" : "https://democracy.eduaction.tw/img/nav-logo-n.svg",
         "description": "經濟民主連合（簡稱經民連）誕生於反服貿及太陽花運動期間，經濟民主連合是一個思想的、政策的、運動的集合體。他是知識社群，是智庫，也是運動團體，出書、提法案，投入運動，致力抵抗中國政商勢力，防衛台灣民主，守護台灣主權與經濟自主，追求自由、平等、團結、永續的新國家。",
+
         "email": "contact@edunion.org.tw",
         "telephone": "02-2395－2552 ",
         "address" : {
@@ -303,6 +306,7 @@ const config = {
         {name: 'name', content: siteTitle + '在地對話，前進新北' },
         {name: 'google-site-verification' , content: '4nQ-VE63O8JpuCWn1Ofgwj4oxUjTiot2n3xJxGQxH88'},
         {name: 'description' , content:'立法院外集結超過十萬人的自主公民反國會濫權，青鳥行動展現台灣人民對民主的堅持，抗議藍白違背程序正義通過國會濫權法案挺身捍衛民主。全台各地都有群眾集結。台灣公民陣線，經濟民主連合與公投護台灣聯盟等超過五十個合辦團體持續邀請全台公民一同全程監督，用力喊出人民的怒吼，並集思廣益下一步行動方向。台灣公民陣線串聯全國各地自主公民、在地公民團體舉辦相關活動，把握覆議後立法院重新議決前的有限時間，與藍營選區選民對話，向藍營立委施壓，希望改變藍營區域立委覆議時的投票傾向。我們對於「反國會濫權行動」，揭開了為期三天的「公民反國會濫權，拒絕民主倒退，警告中國國民黨」行動序幕。此次行動由台灣公民陣線、經濟民主連合、公投護台灣聯盟等多個團體共同發起，保守估計將有破萬人參與，展現公民力量的再次集結。青島東路白天：夏季學校課程啟動。濟南路白天：拒絕民主倒退、警告中國國民黨 公民論壇。​'}
+
       ],
       navbar: {
         title: siteTitle ,
@@ -314,6 +318,7 @@ const config = {
         items: [
           {
             to:'/community/archive2/post1',
+
             position: 'left',
             label: '在地對話',
           },          

@@ -15,6 +15,7 @@ import cover_t2 from '../../static/img/video-thumbnail2.webp'
 import cover_t3 from '../../static/img/video-thumbnail3.webp'
 import time from '../../community/archive2/img/time.jpeg'
 import map from '../../community/archive2/img/map.jpeg'
+
 export default function Hp() {
   return (
     <>
@@ -161,6 +162,7 @@ function Hero() {
       <div
         ref={logoBgEl}
         className="relative w-full bg-cover overflow-hidden bg-no-repeat flex justify-center items-center"
+
         style={{ height: calcH(), backgroundImage: `url(${cover5})` }}
       >
         {/* logo2 layer */}
@@ -174,7 +176,9 @@ function Hero() {
             ref={textRef}
           ></div>          
         {/* logo2_demo */}
+
           <img className="block mb-4" src={logov2} alt="台灣公民陣線串聯全國各地自主公民、在地公民團體舉辦相關活動，把握覆議後立法院重新議決前的有限時間，與藍營選區選民對話，向藍營立委施壓，希望改變藍營區域立委覆議時的投票傾向。" />
+
 
           {/* circle */}
           <div style={{backgroundColor:'#563f2e'}}
@@ -275,6 +279,7 @@ function Statement() {
           下階段行動，轉向在地對話。公民力量將會再次集結，我們的目標是確保民主不被侵蝕，並持續監督政府和立法機關，以確保人民的權益不受侵犯。
         </p>            
           </div>
+
         </div>
       </div>
     </div>
