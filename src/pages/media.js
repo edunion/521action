@@ -6,6 +6,9 @@ import { useColorMode } from "@docusaurus/theme-common";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import Tabs from "@theme/Tabs";
 
+import {data as newsData } from "../media_data/posts.js"
+import {data as speech } from "../media_data/speech.js"
+
 import TabItem from "@theme/TabItem";
 
 export default function Media() {
@@ -17,41 +20,9 @@ export default function Media() {
 }
 
 function MediaContext() {
-  const [newsData, setData] = useState([]);
   const [drawerContent ,  setDrawerContent] = useState({ content: '' ,  url : '' , title:'',author:''})
-  const [speech, setSpeech] = useState([]);
   const { colorMode } = useColorMode();
   const drawer = useRef(null)
-  const getNews = async () => {
-    try {
-      const { data } = await axios.get(
-        "https://legislative-data.zeabur.app/info_519"
-      );
-      const dataArray = data.values;
-      dataArray.shift();
-      setData(dataArray);
-    } catch {
-      setData(undefined);
-    }
-  };
-
-  const getSpeech = async () => {
-    try {
-      const { data } = await axios.get(
-        "https://legislative-data.zeabur.app/info_519_2"
-      );
-      const dataArray = data.values;
-      dataArray.shift();
-      setSpeech(dataArray);
-    } catch {
-      setSpeech(undefined);
-    }
-  };
-
-  useEffect(() => {
-    getNews();
-    getSpeech();
-  }, []);
 
   return (
     <div className={colorMode === "dark" ? "bg-dark" : "bg-white"}>

@@ -83,11 +83,6 @@ const sidebars = {
           dirName: '528file', // Generate sidebar from the docs folder (relative to docs directory) 
         },
       ]
-  },
-  {
-    type: 'link',
-    label: '相關討論貼文', // The link label
-    href: '/media', // The external URL
   }
 ]
 
